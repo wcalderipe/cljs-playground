@@ -1,0 +1,14 @@
+node_modules/
+
+/build/hexagonal/js
+
+pom.xml
+pom.xml.asc
+*.iml
+*.jar
+*.log
+.shadow-cljs
+.idea
+.lein-*
+.nrepl-*
+.DS_Store
