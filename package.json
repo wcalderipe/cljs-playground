@@ -2,10 +2,17 @@
   "name": "cljs-playground",
   "version": "0.0.1",
   "private": true,
+  "scripts": {
+    "start:hexagonal": "npm run watch:cljs:hexagonal & npm run watch:css:hexagonal",
+    "watch:cljs:hexagonal": "shadow-cljs --dependency cider/cider-nrepl:0.25.9 watch hexagonal",
+    "watch:css:hexagonal": "less-watch-compiler src/hexagonal build/hexagonal/css --enable-js"
+  },
   "devDependencies": {
+    "less-watch-compiler": "^1.14.6",
     "shadow-cljs": "2.12.4"
   },
   "dependencies": {
+    "antd": "^4.15.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

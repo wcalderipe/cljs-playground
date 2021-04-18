@@ -1,8 +1,15 @@
 (ns hexagonal.main
-  (:require [reagent.dom]))
+  (:require ["antd/es/layout" :default Layout]
+            ["antd/es/layout/Sider" :default Sider]
+            ["antd/es/row" :default Row]
+            [reagent.dom]))
+
+(defn- layout []
+  [:> Layout
+   [:> (.. Layout -Content) "Content"]])
 
 (defn- render []
-  (reagent.dom/render [:div [:h1 "Hello World"]] (js/document.getElementById "main")))
+  (reagent.dom/render [layout] (js/document.getElementById "main")))
 
 (defn reload []
   (render))
