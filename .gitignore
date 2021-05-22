@@ -1,6 +1,6 @@
 node_modules/
 
-/build/hexagonal/js
+/build/**/js
 
 pom.xml
 pom.xml.asc

@@ -4,15 +4,24 @@
   "private": true,
   "scripts": {
     "start:hexagonal": "npm run watch:cljs:hexagonal & npm run watch:css:hexagonal",
-    "watch:cljs:hexagonal": "shadow-cljs --dependency cider/cider-nrepl:0.25.9 watch hexagonal",
-    "watch:css:hexagonal": "less-watch-compiler src/hexagonal build/hexagonal/css --enable-js"
+    "watch:cljs:hexagonal": "shadow-cljs watch hexagonal",
+    "watch:css:hexagonal": "less-watch-compiler src/hexagonal build/hexagonal/css --enable-js",
+
+    "start:inversion": "npm run watch:cljs:inversion",
+    "watch:cljs:inversion": "shadow-cljs watch inversion",
+
+    "start:state-reload": "shadow-cljs watch state-reload",
+
+    "start:rule-engine": "shadow-cljs watch rule-engine"
   },
   "devDependencies": {
     "less-watch-compiler": "^1.14.6",
+    "node-fetch": "^2.6.1",
     "shadow-cljs": "2.12.4"
   },
   "dependencies": {
     "antd": "^4.15.1",
+    "firebase": "^8.4.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
