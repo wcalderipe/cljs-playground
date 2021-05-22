@@ -1,0 +1,12 @@
+.hello {
+  color: blue;
+}
+
+/* The three Tailwind layer */
+
+/* The base provides a reset using modern-normalize  */
+@tailwind base;
+/* Only the container class for responsive design */
+@tailwind components;
+/* Here's where Tailwind core lives */
+@tailwind utilities;

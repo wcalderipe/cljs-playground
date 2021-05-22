@@ -23,36 +23,46 @@
  :nrepl {:port 8777}
 
  :builds
- {:hexagonal {:target :browser
+ {:hexagonal {:target     :browser
               :output-dir "build/hexagonal/js"
               :asset-path "/js"
-              :modules {:main {:init-fn hexagonal.main/init}}
-              :devtools {:http-root "build/hexagonal"
-                         :http-port 5000
-                         :preloads [re-frisk.preload]
-                         :after-load hexagonal.main/reload}}
+              :modules    {:main {:init-fn hexagonal.main/init}}
+              :devtools   {:http-root  "build/hexagonal"
+                           :http-port  5000
+                           :preloads   [re-frisk.preload]
+                           :after-load hexagonal.main/reload}}
 
-  :inversion {:target :browser
+  :inversion {:target     :browser
               :output-dir "build/inversion/js"
               :asset-path "/js"
-              :modules {:main {:init-fn inversion.main/init}}
-              :devtools {:http-root "build/inversion"
-                         :http-port 5000
-                         :preloads [re-frisk.preload]
-                         :after-load inversion.main/reload}}
+              :modules    {:main {:init-fn inversion.main/init}}
+              :devtools   {:http-root  "build/inversion"
+                           :http-port  5000
+                           :preloads   [re-frisk.preload]
+                           :after-load inversion.main/reload}}
 
-  :state-reload {:target :browser
+  :state-reload {:target     :browser
                  :output-dir "build/state_reload/js"
                  :asset-path "/js"
-                 :modules {:main {:init-fn state-reload.main/init}}
-                 :devtools {:http-root "build/state_reload"
-                            :http-port 5000
-                            :preloads [re-frisk.preload]
-                            :after-load state-reload.main/reload}}
+                 :modules    {:main {:init-fn state-reload.main/init}}
+                 :devtools   {:http-root  "build/state_reload"
+                              :http-port  5000
+                              :preloads   [re-frisk.preload]
+                              :after-load state-reload.main/reload}}
 
-  :rule-engine {:target :node-script
-                :main rule-engine.main/main
-                :output-to "build/rule_engine/main.js"
-                :compiler-options {:infer-externs :auto
+  :rule-engine {:target           :node-script
+                :main             rule-engine.main/main
+                :output-to        "build/rule_engine/main.js"
+                :compiler-options {:infer-externs   :auto
                                    :reader-features #{:node}}}
+
+
+  :tailwind {:target     :browser
+             :output-dir "build/tailwind/js"
+             :asset-path "/js"
+             :modules    {:main {:init-fn tailwind.main/init}}
+             :devtools   {:http-root  "build/tailwind"
+                          :http-port  5000
+                          :preloads   [re-frisk.preload]
+                          :after-load tailwind.main/reload}}
   }}
